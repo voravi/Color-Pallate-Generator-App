@@ -1,16 +1,24 @@
-# color_pallate_generator_app
+# Currency Converter App
 
-A new Flutter project.
 
-## Getting Started
+### Output 1 ---------------------- : Output 2                  
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+<p>
+ <img align="left" src="https://user-images.githubusercontent.com/96048173/198861304-5047d046-af0f-446a-a1db-d724a6c7b6df.jpg" alt="Screenshot_20221030_085608" width=230 height=480/>
+   
+  <img align="left" src="https://user-images.githubusercontent.com/96048173/198861307-17fa078d-674d-4997-8748-1be967d7ba6a.jpg" alt="Screenshot_20221030_085610" width=230 height=480/> 
+  </br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
+  
+ Mechanism Video
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+   https://user-images.githubusercontent.com/96048173/198861348-8e3139d5-3628-4bcb-a363-797822543f97.mp4
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+  </p>
+  
+
+
+
+
+
+
