@@ -24,7 +24,6 @@ class _ColorPelletsState extends State<ColorPellets> {
 
   defaultProvider() {
     Provider.of<PaletteProvider>(context, listen: false).changePalette(index: 0);
-    Provider.of<PaletteProvider>(context, listen: false).changeColorPalette();
   }
 
   @override
@@ -143,9 +142,26 @@ class _ColorPelletsState extends State<ColorPellets> {
                           ),
                         ),
                         child: Center(
-                          child: Text(
-                            "#${palette.codeList[0]}",
-                            style: TextStyle(color: Colors.white),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                "#${palette.codeList[0]}",
+                                style: TextStyle(color: Colors.white),
+                              ),
+                              SizedBox(width: 5,),
+                              GestureDetector(
+                                onTap: () {
+                                  Clipboard.setData(ClipboardData(text: "${palette.codeList[0]}"));
+                                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Copied To ClipBoard!"),backgroundColor: Colors.greenAccent,),);
+                                },
+                                child: Icon(
+                                  Icons.copy_all_rounded,
+                                  color: Colors.white.withOpacity(0.8),
+                                  size: 18,
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       ),
@@ -154,9 +170,26 @@ class _ColorPelletsState extends State<ColorPellets> {
                         width: 220,
                         color: palette.colorList[1],
                         child: Center(
-                          child: Text(
-                            "#${palette.codeList[1]}",
-                            style: TextStyle(color: Colors.white),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                "#${palette.codeList[1]}",
+                                style: TextStyle(color: Colors.white),
+                              ),
+                              SizedBox(width: 5,),
+                              GestureDetector(
+                                onTap: () {
+                                  Clipboard.setData(ClipboardData(text: "${palette.codeList[1]}"));
+                                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Copied To ClipBoard!"),backgroundColor: Colors.greenAccent,),);
+                                },
+                                child: Icon(
+                                  Icons.copy_all_rounded,
+                                  color: Colors.white.withOpacity(0.8),
+                                  size: 18,
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       ),
@@ -165,9 +198,26 @@ class _ColorPelletsState extends State<ColorPellets> {
                         width: 220,
                         color: palette.colorList[2],
                         child: Center(
-                          child: Text(
-                            "#${palette.codeList[2]}",
-                            style: TextStyle(color: Colors.white),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                "#${palette.codeList[2]}",
+                                style: TextStyle(color: Colors.white),
+                              ),
+                              SizedBox(width: 5,),
+                              GestureDetector(
+                                onTap: () {
+                                  Clipboard.setData(ClipboardData(text: "${palette.codeList[2]}"));
+                                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Copied To ClipBoard!"),backgroundColor: Colors.greenAccent,),);
+                                },
+                                child: Icon(
+                                  Icons.copy_all_rounded,
+                                  color: Colors.white.withOpacity(0.8),
+                                  size: 18,
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       ),
@@ -176,9 +226,26 @@ class _ColorPelletsState extends State<ColorPellets> {
                         width: 220,
                         color: palette.colorList[3],
                         child: Center(
-                          child: Text(
-                            "#${palette.codeList[3]}",
-                            style: TextStyle(color: Colors.white),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                "#${palette.codeList[3]}",
+                                style: TextStyle(color: Colors.white),
+                              ),
+                              SizedBox(width: 5,),
+                              GestureDetector(
+                                onTap: () {
+                                  Clipboard.setData(ClipboardData(text: "${palette.codeList[3]}"));
+                                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Copied To ClipBoard!"),backgroundColor: Colors.greenAccent,),);
+                                },
+                                child: Icon(
+                                  Icons.copy_all_rounded,
+                                  color: Colors.white.withOpacity(0.8),
+                                  size: 18,
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       ),
@@ -187,9 +254,26 @@ class _ColorPelletsState extends State<ColorPellets> {
                         width: 220,
                         color: palette.colorList[4],
                         child: Center(
-                          child: Text(
-                            "#${palette.codeList[4]}",
-                            style: TextStyle(color: Colors.white),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                "#${palette.codeList[4]}",
+                                style: TextStyle(color: Colors.white),
+                              ),
+                              SizedBox(width: 5,),
+                              GestureDetector(
+                                onTap: () {
+                                  Clipboard.setData(ClipboardData(text: "${palette.codeList[4]}"));
+                                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Copied To ClipBoard!"),backgroundColor: Colors.greenAccent,),);
+                                },
+                                child: Icon(
+                                  Icons.copy_all_rounded,
+                                  color: Colors.white.withOpacity(0.8),
+                                  size: 18,
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       ),
@@ -204,9 +288,26 @@ class _ColorPelletsState extends State<ColorPellets> {
                           ),
                         ),
                         child: Center(
-                          child: Text(
-                            "#${palette.codeList[5]}",
-                            style: TextStyle(color: Colors.white),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                "#${palette.codeList[5]}",
+                                style: TextStyle(color: Colors.white),
+                              ),
+                              SizedBox(width: 5,),
+                              GestureDetector(
+                                onTap: () {
+                                  Clipboard.setData(ClipboardData(text: "${palette.codeList[5]}"));
+                                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Copied To ClipBoard!"),backgroundColor: Colors.greenAccent,),);
+                                },
+                                child: Icon(
+                                  Icons.copy_all_rounded,
+                                  color: Colors.white.withOpacity(0.8),
+                                  size: 18,
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       ),
@@ -225,13 +326,12 @@ class _ColorPelletsState extends State<ColorPellets> {
                   borderRadius: 10,
                   padding: const EdgeInsets.all(15),
                   onPressed: () {
-                    if(switchValue) {
-                      Provider.of<PaletteProvider>(context,listen: false).changeColorPalette();
+                    if (switchValue) {
+                      Provider.of<PaletteProvider>(context, listen: false).changeColorPalette();
                     } else {
                       (i == 14) ? i = 0 : i++;
                       Provider.of<PaletteProvider>(context, listen: false).changePalette(index: i);
                     }
-
                   },
                   outlineColor: Theme.of(context).primaryColor,
                   child: Text(
