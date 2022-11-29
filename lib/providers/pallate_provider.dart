@@ -1,10 +1,13 @@
 import 'dart:convert';
-import 'dart:developer';
+import 'dart:developer' as log_print;
+import 'dart:math';
 import 'package:color_pallate_generator_app/modals/pallate.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
 class PaletteProvider with ChangeNotifier{
+
+  Random random = Random();
 
   Palette palette = Palette(
     index: 0,
@@ -29,8 +32,26 @@ class PaletteProvider with ChangeNotifier{
     List<int> paletteIntData = palette.codeList.map((e) => int.parse(e, radix: 16)).toList();
     palette.colorList= paletteIntData.map((e) => Color(e)).toList();
 
-    log(palette.codeList.toString(),name: "Code List");
-    log(palette.colorList.toString(),name: "Color List");
+    notifyListeners();
+  }
+
+  void changeColorPalette() async {
+    String data = await rootBundle.loadString("assets/json/color_palette.json");
+    List<dynamic> decodedData = jsonDecode(data);
+    List<dynamic> res = decodedData[0]["colors"];
+
+    int num1 = random.nextInt(104);
+    int num2 = random.nextInt(104);
+    int num3 = random.nextInt(104);
+    int num4 = random.nextInt(104);
+    int num5 = random.nextInt(104);
+    int num6 = random.nextInt(104);
+    List<String> dataList = [res[num1],res[num2],res[num3],res[num4],res[num5],res[num6]];
+
+    palette.codeList = dataList;
+
+    List<int> paletteIntData = palette.codeList.map((e) => int.parse(e, radix: 16)).toList();
+    palette.colorList = paletteIntData.map((e) => Color(e)).toList();
 
     notifyListeners();
   }

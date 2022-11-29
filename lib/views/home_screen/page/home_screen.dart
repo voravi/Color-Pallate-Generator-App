@@ -20,9 +20,11 @@ class ColorPellets extends StatefulWidget {
 class _ColorPelletsState extends State<ColorPellets> {
   ScreenshotController screenshotController = ScreenshotController();
   int i = 0;
+  bool switchValue = false;
 
   defaultProvider() {
     Provider.of<PaletteProvider>(context, listen: false).changePalette(index: 0);
+    Provider.of<PaletteProvider>(context, listen: false).changeColorPalette();
   }
 
   @override
@@ -58,22 +60,35 @@ class _ColorPelletsState extends State<ColorPellets> {
             SizedBox(
               height: 40,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  "Color Palate Generator",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Theme.of(context).primaryColor,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 25,
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "Color Palate Generator",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Theme.of(context).primaryColor,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 25,
+                    ),
                   ),
-                ),
-              ],
+                  Spacer(),
+                  Switch(
+                    value: switchValue,
+                    activeColor: Theme.of(context).primaryColor,
+                    onChanged: (val) {
+                      setState(() {
+                        switchValue = val;
+                      });
+                    },
+                  ),
+                ],
+              ),
             ),
             SizedBox(
-              height: 30,
+              height: 10,
             ),
             Stack(
               alignment: Alignment.center,
@@ -128,7 +143,10 @@ class _ColorPelletsState extends State<ColorPellets> {
                           ),
                         ),
                         child: Center(
-                          child: Text("#${palette.codeList[0]}",style: TextStyle(color: Colors.white),),
+                          child: Text(
+                            "#${palette.codeList[0]}",
+                            style: TextStyle(color: Colors.white),
+                          ),
                         ),
                       ),
                       Container(
@@ -136,7 +154,10 @@ class _ColorPelletsState extends State<ColorPellets> {
                         width: 220,
                         color: palette.colorList[1],
                         child: Center(
-                          child: Text("#${palette.codeList[1]}",style: TextStyle(color: Colors.white),),
+                          child: Text(
+                            "#${palette.codeList[1]}",
+                            style: TextStyle(color: Colors.white),
+                          ),
                         ),
                       ),
                       Container(
@@ -144,7 +165,10 @@ class _ColorPelletsState extends State<ColorPellets> {
                         width: 220,
                         color: palette.colorList[2],
                         child: Center(
-                          child: Text("#${palette.codeList[2]}",style: TextStyle(color: Colors.white),),
+                          child: Text(
+                            "#${palette.codeList[2]}",
+                            style: TextStyle(color: Colors.white),
+                          ),
                         ),
                       ),
                       Container(
@@ -152,7 +176,10 @@ class _ColorPelletsState extends State<ColorPellets> {
                         width: 220,
                         color: palette.colorList[3],
                         child: Center(
-                          child: Text("#${palette.codeList[3]}",style: TextStyle(color: Colors.white),),
+                          child: Text(
+                            "#${palette.codeList[3]}",
+                            style: TextStyle(color: Colors.white),
+                          ),
                         ),
                       ),
                       Container(
@@ -160,7 +187,10 @@ class _ColorPelletsState extends State<ColorPellets> {
                         width: 220,
                         color: palette.colorList[4],
                         child: Center(
-                          child: Text("#${palette.codeList[4]}",style: TextStyle(color: Colors.white),),
+                          child: Text(
+                            "#${palette.codeList[4]}",
+                            style: TextStyle(color: Colors.white),
+                          ),
                         ),
                       ),
                       Container(
@@ -174,7 +204,10 @@ class _ColorPelletsState extends State<ColorPellets> {
                           ),
                         ),
                         child: Center(
-                          child: Text("#${palette.codeList[5]}",style: TextStyle(color: Colors.white),),
+                          child: Text(
+                            "#${palette.codeList[5]}",
+                            style: TextStyle(color: Colors.white),
+                          ),
                         ),
                       ),
                     ],
@@ -192,8 +225,13 @@ class _ColorPelletsState extends State<ColorPellets> {
                   borderRadius: 10,
                   padding: const EdgeInsets.all(15),
                   onPressed: () {
-                    (i == 14) ? i = 0 : i++;
-                    Provider.of<PaletteProvider>(context, listen: false).changePalette(index: i);
+                    if(switchValue) {
+                      Provider.of<PaletteProvider>(context,listen: false).changeColorPalette();
+                    } else {
+                      (i == 14) ? i = 0 : i++;
+                      Provider.of<PaletteProvider>(context, listen: false).changePalette(index: i);
+                    }
+
                   },
                   outlineColor: Theme.of(context).primaryColor,
                   child: Text(
